@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev-Detective - GitHub Search Client</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="top-nav">
+        <!-- Extreme Left: Title -->
+        <h1 class="main-title">Dev-Detective</h1>
+
+        <!-- Exact Middle: Search Container -->
+        <form id="search-form" class="search-form">
+            <input type="text" id="username-input" placeholder="Enter GitHub username" required>
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Right Section: Buttons -->
+        <div class="nav-controls">
+            <button id="battle-mode-btn" class="battle-btn">
+                ⚔️ Battle
+            </button>
+            <button id="theme-toggle" class="theme-btn">
+                🌙
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Subtitle -->
+        <div class="subtitle-container">
+            <button class="subtitle-badge" id="subtitle-search-btn">Search</button>
+            <h2 class="subtitle">GitHub Profile Search & Battle Mode</h2>
+            <button class="subtitle-badge" id="subtitle-battle-btn">Battle</button>
+        </div>
+
+        <!-- Single Search Mode (Phase 1 & 2 -->
+        <div id="single-search-section">
+            <div id="loading-indicator" class="hidden">
+                <div class="spinner"></div>
+                <p>Loading...</p>
+            </div>
+            <div id="error-message" class="hidden">
+                <p>User Not Found</p>
+            </div>
+            <div id="profile-container" class="hidden"></div>
+        </div>
+
+        <!-- Battle Mode (Phase 3) -->
+        <div id="battle-search-section" class="hidden">
+            <form id="battle-form" class="battle-form">
+                <div class="battle-inputs">
+                    <input type="text" id="username1-input" placeholder="Player 1 Username" required>
+                    <input type="text" id="username2-input" placeholder="Player 2 Username" required>
+                </div>
+                <button type="submit">Battle!</button>
+            </form>
+            <div id="battle-loading-indicator" class="hidden">
+                <div class="spinner"></div>
+                <p>Loading Battle Data...</p>
+            </div>
+            <div id="battle-error-message" class="hidden">
+                <p>One or both users not found</p>
+            </div>
+            <div id="battle-container" class="hidden"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

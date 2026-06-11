@@ -267,14 +267,33 @@ body {
 
 /* Error Message */
 #error-message, #battle-error-message {
+    max-width: 500px;
+    margin: 0 auto 2rem auto;
     text-align: center;
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    background: linear-gradient(145deg, #ef4444, #c72c2c);
     color: white;
-    padding: 2rem;
-    border-radius: 16px;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-    font-weight: 600;
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    box-shadow:  20px 20px 60px var(--shadow-color), 
+                -20px -20px 60px rgba(255, 255, 255, 0.1);
+    position: relative;
+    transform: perspective(500px) rotateX(5deg);
+    transition: all 0.3s ease;
+}
+
+#error-message:hover, #battle-error-message:hover {
+    transform: perspective(500px) rotateX(0deg);
+    box-shadow:  25px 25px 70px var(--shadow-color), 
+                -25px -25px 70px rgba(255, 255, 255, 0.15);
+}
+
+#error-message::before, #battle-error-message::before {
+    content: '⚠️';
+    display: block;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
 }
 
 /* Profile Container */
